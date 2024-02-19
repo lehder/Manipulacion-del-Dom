@@ -1136,9 +1136,10 @@ $0
      </div>    
   
 ```
+
 Nos a traido todo el HTML que teneiamos en ese div.
 
-Eto es muy conveniente por que en tonces yo podria hacer cosas como por ejemplo reemplazar lo que ya 
+ESto es muy conveniente por que en tonces yo podria hacer cosas como por ejemplo reemplazar lo que ya 
 escribimos (Algo nuevo) por (Algo viejo) como esto es un texto, esto lo podemos hacer creando una constante, 
 dandole un nombre y esto seria igual
 a ($0.outerHTML.replace('Algo nuevo', 'Algo viejo')) osea con esto le estamos diciendo que queremos reemplazar
@@ -1151,10 +1152,61 @@ const nuevoHTML = $0.outerHTML.replace('Algo nuevo', 'Algo viejo')
 
 ```
 
+De esta manera podemos reemplazar u texto por otro texto, de una manera muy censilla, si damos enter, y le decimos 
+
+```js
+
+nuevoHTML 
+
+```
+
+Esto deberia guardarme un HTML y posteriormente ya que nos lo a guardado, ahora lo que queremos es que nos lo cambien, por que hasta el momneto lo unico que ha hecho es guaradarlo, en tonces le vamos a decir, quiero que ahora el HTML (innerHTML) sea igual a la nueva cadena que acabamos de crear osea (nuevoHTML) 
+
+```js
+
+$0.innerHTML = nuevoHTML
+
+```
+
+El navegador no me va a preguntar nada, y simplemente lo que sea que yo le pase en esta nueva variable me lo va a  reemplazar, osea que me va a reemplazar el texto nuevo por el viejo, 
+
+
+
+```js
+
+$0
+<h2>​Checkout form​</h2>​
+$0.innerHTML
+'Checkout form'
+$0.innerHTML = "Algo nuevo"
+'Algo nuevo'
+const nuevoHTML = $0.outerHTML.replace('Algo nuevo', 'ALgo viejo')
+undefined
+nuevoHTML
+'<h2>ALgo viejo</h2>'
+$0innerHTML = nuevoHTML
+'<h2>ALgo viejo</h2>'
+$0.innerHTML = nuevoHTML
+'<h2>ALgo viejo</h2>'
+
+```
+
+
+Como lo hemos visto a cambiado el texto y este se ve reflejado en el navegador, aun que esto paresca muy conmveniente, tiene algunos problemas de seguridad, esto es peligroso en el caso de que, esto permite inyecciones de XSS, es decir que yo puedo utlizar estos metodos para inyectar codigo maligno, esto no quiere decir que no debemos utilizar innerHTML, de hecho debemos de utilizarlo pero hay que ser muy cuidadosos cuando lo usemos, lo unico es que debemos evitar usarlo cuando la cadena de texto, lo que vamos a rrenderizar uzando innerHTML proviene del usuario, si esto de alguna forma fue escrito por el usuario, nunca pero nunca debemos de confiar en eso, y siempre hay que pasarlo por un presoso de sanytais,  que se encarga de tomar el HTML como texto y darle una limpieza para esegurarse de que este texto no contiene nada malicioso y por consiguiente rrenderizarlo con innerHTML
+, aun que esto nos parezca muy conveniente, tiene algunos problemas de seguridad
+y es que podremos insertar codigo malicioso o mas conocido como
+inyecciones XSS, Osea que podre utlizarlo como ya lo dijimos
+para inyectar codigo maligno.
+
+Nos vemos en la siguiente clase.
 
 
 
 
+# Clase numero 8
+
+
+# Atributos y propiedades
 
 
 
